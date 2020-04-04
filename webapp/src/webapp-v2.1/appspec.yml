@@ -1,0 +1,15 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /webapp/
+hooks:
+  ApplicationStop:
+    - location: hooks/ApplicationStop.sh
+      timeout: 30
+  ApplicationStart:
+    - location: hooks/ApplicationStart.sh
+      timeout: 30
+  ValidateService:
+    - location: hooks/ValidateService.sh
+      timeout: 1800

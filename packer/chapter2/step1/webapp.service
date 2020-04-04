@@ -1,0 +1,12 @@
+[Unit]
+Description=webapp server
+After=syslog.target network.target
+
+[Service]
+Type=simple
+ExecStart=/bin/node /webapp/server.js
+KillMode=process
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
